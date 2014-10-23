@@ -2,7 +2,8 @@
   "author": "Jeff Picklyk",
   "dependencies": [
     { "name": "puppetlabs/powershell", "version_requirement": ">= 1.0.3" },
-    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.1.0" }
+    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.1.0" },
+    { "name": "opentable/windowsfeature", "version_requirement": ">= 1.0.0" }
   ],
   "license": "Apache 2.0 License",
   "name": "jpicklyk-exchange",
