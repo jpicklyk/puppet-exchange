@@ -1,0 +1,21 @@
+{
+  "author": "Jeff Picklyk",
+  "dependencies": [
+    { "name": "puppetlabs/powershell", "version_requirement": ">= 1.0.3" },
+    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.1.0" }
+  ],
+  "license": "Apache 2.0 License",
+  "name": "jpicklyk-exchange",
+  "operatingsystem_support": [
+    {
+    "operatingsystem":"Windows",
+    "operatingsystemrelease":["Server 2008 R2", "Server 2012", "Server 2012 R2"]
+    }
+  ],
+  "project_page": "https://github.com/jpicklyk/puppet-exchange",
+  "requirements": [],
+  "source": "https://github.com/jpicklyk/puppet-exchange",
+  "summary": "Puppet module to install and configure exchange 2010 and 2013",
+  "tags": ["Windows","Microsoft","Exchange"],
+  "version": "0.1.0"
+}
