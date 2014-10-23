@@ -12,7 +12,7 @@ class exchange::prerequisites(
     install_options => ['/quiet','/norestart'],
   }
   
-  service {'Net.Tcp Port Sharing Service':
+  service {'NetTcpPortSharing':
     ensure  => 'running',
     enable  => true,
   }
