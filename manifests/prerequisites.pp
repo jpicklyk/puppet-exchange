@@ -8,7 +8,7 @@ class exchange::prerequisites(
 
   package { 'Microsoft Filter Pack 2.0':
     ensure => 'installed',
-    source => "\'${directory}${filename}\'",
+    source => "${directory}${filename}",
     install_options => ['/quiet','/norestart'],
   }
   
