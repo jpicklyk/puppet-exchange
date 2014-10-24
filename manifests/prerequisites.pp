@@ -26,5 +26,5 @@ class exchange::prerequisites(
   windowsfeature{'$exrole':
     feature_name  => $features
   }
-  contain ::windowsfeature
+  contain windows_feature
 }
