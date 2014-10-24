@@ -1,6 +1,6 @@
 class exchange::prerequisites(
   $exrole         = undef,
-  $directory      = 's:\\Microsoft\\Exchange 2010\\',
+  $directory      = undef,
   $filename       = 'FilterPack64bit.exe',
   $update         = 'filterpacksp2010-kb2687447-fullfile-x64-en-us.exe',
 ) {
@@ -8,7 +8,7 @@ class exchange::prerequisites(
 
   package { 'Microsoft Filter Pack 2.0':
     ensure => 'installed',
-    source => "${directory}${filename}",
+    source => "\'${directory}${filename}\'",
     install_options => ['/quiet','/norestart'],
   }
   
