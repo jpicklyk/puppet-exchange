@@ -24,7 +24,7 @@ class exchange::prerequisites(
   }
   notify{'$features':}
   windowsfeature{'$exrole':
-    feature_name  => $features,
+    feature_name  => ["NET-Framework","RSAT-ADDS","Web-Server"],
   }
   contain windowsfeature
 }
