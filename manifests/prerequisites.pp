@@ -24,5 +24,4 @@ class exchange::prerequisites(
   }
   
   windowsfeature{$features:}
-  #contain windowsfeature
 }
