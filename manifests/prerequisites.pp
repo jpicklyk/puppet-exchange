@@ -26,5 +26,5 @@ class exchange::prerequisites(
   windowsfeature{'exchange':
     feature_name  => ['NET-Framework','RSAT-ADDS','Web-Server'],
   }
-  #contain windowsfeature
+  contain windowsfeature
 }
