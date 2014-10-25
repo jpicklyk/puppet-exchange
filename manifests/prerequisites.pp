@@ -24,5 +24,5 @@ class exchange::prerequisites(
   }
   $test = ['NET-Framework','RSAT-ADDS','Web-Server']
   windowsfeature{$test:}
-  contain windowsfeature
+  #contain windowsfeature
 }
