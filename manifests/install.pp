@@ -3,7 +3,7 @@ class exchange::install (
   $path,
   $orgname,
 ) {
-  validate_bool(prepareshema)
+  
   validate_string(orgname)
   
   $setuprole = $exrole ? {
