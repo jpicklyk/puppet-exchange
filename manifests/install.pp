@@ -1,5 +1,5 @@
 class exchange::install (
-  $exrole = undef,
+  $exrole,
   $path,
   $orgname,
 ) {

@@ -1,6 +1,6 @@
 class exchange::prerequisites(
-  $exrole         = undef,
-  $directory      = undef,
+  $exrole,
+  $directory,
   $filename       = 'FilterPack64bit.exe',
   $update         = 'filterpacksp2010-kb2687447-fullfile-x64-en-us.exe',
 ) {
