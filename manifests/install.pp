@@ -36,4 +36,8 @@ class exchange::install (
     timeout   => 0
   }
   
+  reboot{'after exchange':
+    subscribe => Exec['Install Role'],
+  }
+  
 }
