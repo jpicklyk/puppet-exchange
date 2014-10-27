@@ -26,7 +26,7 @@ class exchange::install (
   } ->
   
   exec{'Install Role':
-    command   => "${path}\\setup.com /mode:install /role:${setuprole} /organizationName:${orgname}",
+    command   => "${path}\\setup.com /mode:install /role:${setuprole} /organizationName:'${orgname}'",
     provider  => powershell,
     unless    => 'Try {Get-ExchangeServer}Catch{exit 1}',
     timeout   => 0
