@@ -15,7 +15,7 @@ class exchange::install (
     command   => "setup.com /PS",
     path      => "${path}",
     provider  => powershell,
-    unless    => 'Try {Get-ADObject $("CN=ms-Exch-Schema-Version-Pt,"+$((Get-ADRootDSE).NamingContexts | Where-Object {$_ -like "*Schema*"}))}Catch {exit 1}',
+    unless    => 'Try {Get-ADObject $("CN=ms-Exch-Schema-Version-Pt,"+$((Get-ADRootDSE).NamingContexts | Where-Object {$_ -like "*Schema*"}))}Catch {exit 1}',    
   } ->
   
   exec{'Doamin Prep':
@@ -27,7 +27,8 @@ class exchange::install (
   
   exec{'Install Role':
     command   => "${path}\\setup.com /mode:install /role:${setuprole} /organizationName:${orgname}",
-    provider  => powershell,    
+    provider  => powershell,
+    timeout   => 0
   }
   
 }
