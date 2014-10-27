@@ -23,7 +23,7 @@ class exchange::install (
     path      => "${path}",
     provider  => powershell,
     require => Exec['Schema Prep'],
-  } ->
+  } ~>
   
   exec{'Install Role':
     command   => "${path}\\setup.com /mode:install /role:${setuprole} /organizationName:${orgname}",
