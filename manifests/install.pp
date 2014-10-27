@@ -27,8 +27,7 @@ class exchange::install (
   
   exec{'Install Role':
     command   => "${path}\\setup.com /mode:install /role:${setuprole} /organizationName:${orgname}",
-    provider  => powershell,
-    require => Exec['Domain Prep'],
+    provider  => powershell,    
   }
   
 }
