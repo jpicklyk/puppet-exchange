@@ -19,14 +19,14 @@ class exchange::install (
   } ~>
   
   exec{'Doamin Prep':
-    command   => "setup.com /PrepareAD /OrganizationName:${orgname}",
+    command   => "setup.com /PrepareAD /OrganizationName:'${orgname}'",
     path      => "${path}",
     provider  => powershell,
     require => Exec['Schema Prep'],
   } ->
   
   exec{'Install Role':
-    command   => "${path}\\setup.com /mode:install /role:${setuprole} /organizationName:'${orgname}'",
+    command   => "${path}\\setup.com /mode:install /role:'${setuprole}'' /organizationName:'${orgname}'",
     provider  => powershell,
     unless    => 'Try {Get-ExchangeServer}Catch{exit 1}',
     timeout   => 0
