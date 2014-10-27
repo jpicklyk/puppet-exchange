@@ -26,19 +26,20 @@ class exchange::install (
     path      => "${path}",
     provider  => powershell,
     require => Exec['Schema Prep'],
+    unless    => 'Add-PSSnapin Microsoft.Exchange.Management.PowerShell.E2010;Try {Get-ExchangeServer}Catch{exit 1}',
     timeout   => 0
   } ->
   
   exec{'Install Role':
-    command   => "setup.com /mode:install /role:'${setuprole}'' /organizationName:'${orgname}'",
+    command   => "setup.com /mode:install /role:'${setuprole}' /organizationName:'${orgname}'",
     path      => "${path}",
     provider  => powershell,
-    unless    => 'Try {Get-ExchangeServer}Catch{exit 1}',
+    unless    => 'Add-PSSnapin Microsoft.Exchange.Management.PowerShell.E2010;Try {Get-ExchangeServer}Catch{exit 1}',
     timeout   => 0
   }
   
-  #reboot{'after exchange':
-  #  subscribe => Exec['Install Role'],
-  #}
+  reboot{'after exchange':
+    subscribe => Exec['Install Role'],
+  }
   
 }
