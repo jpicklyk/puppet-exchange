@@ -4,7 +4,7 @@ class exchange::prerequisites(
   $filename       = 'FilterPack64bit.exe',
   $update         = 'filterpacksp2010-kb2687447-fullfile-x64-en-us.exe',
 ) {
-  validate_re($exrole, '^(unified|cas|mailbox)$', 'Unsupported role, choose 1 of \'unified\', \'cas\', or \'mailbox\'')
+  validate_re($exrole, '^(unified|cas|mailbox)$', 'Unsupported role \'${exrole}\', choose 1 of \'unified\', \'cas\', or \'mailbox\'')
   
   package { 'Microsoft Filter Pack 2.0':
     ensure => 'installed',
