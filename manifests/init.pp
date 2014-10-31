@@ -23,10 +23,10 @@ class exchange(
   validate_re($role, '^(unified|cas|mailbox)$', "Unsupported role \'${role}\', choose 1 of \'unified\', \'cas\', or \'mailbox\'")
   
   $exrole = $role ? {
-    'unified':  => 'CA,MB,HT,MT',
-    'cas':      => 'CA,HT,MT',
+    'unified'  => 'CA,MB,HT,MT',
+    'cas'      => 'CA,HT,MT',
     'mailbox'   => 'MB,MT',
-    default:    => fail("Unsupported role: ${role}")
+    default    => fail("Unsupported role: ${role}")
   }
   
   class { '::exchange::prerequisites':
