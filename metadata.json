@@ -18,5 +18,5 @@
   "source": "https://github.com/jpicklyk/puppet-exchange",
   "summary": "Puppet module to install and configure exchange 2010 and 2013",
   "tags": ["Windows","Microsoft","Exchange"],
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
