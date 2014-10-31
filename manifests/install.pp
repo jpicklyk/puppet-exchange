@@ -1,16 +1,12 @@
 class exchange::install (
-  $exrole,
+  $role,
   $path,
   $orgname,
 ) {
   
   validate_string($orgname)
   validate_string($path)
-  validate_string($exrole)
-  
-  $setuprole = $exrole ? {
-    default => 'CA,MB,HT,MT'
-  }
+  validate_re($role,'^(?:CA|MB|HT|MT)(?:(?:\,(?:CA|MB|HT|MT))?)*$')
   
   
   exec{'Schema Prep':
@@ -31,7 +27,7 @@ class exchange::install (
   } ->
   
   exec{'Install Role':
-    command   => "setup.com /mode:install /role:'${setuprole}' /organizationName:'${orgname}'",
+    command   => "setup.com /mode:install /role:'${role}' /organizationName:'${orgname}'",
     path      => "${path}",
     provider  => powershell,
     unless    => 'Add-PSSnapin Microsoft.Exchange.Management.PowerShell.E2010;Try {Get-ExchangeServer}Catch{exit 1}',
