@@ -12,7 +12,7 @@ class exchange::install (
   exec{'Schema Prep':
     command   => "${path}\\setup.com /PS",
     provider  => powershell,
-    unless    => 'Try {Get-ADObject $("CN=ms-Exch-Schema-Version-Pt,"+$((Get-ADRootDSE).NamingContexts | Where-Object {$_ -like "*Schema*"}))}Catch {exit 1}', 
+    unless    => 'import-module activedirectory;Try {Get-ADObject $("CN=ms-Exch-Schema-Version-Pt,"+$((Get-ADRootDSE).NamingContexts | Where-Object {$_ -like "*Schema*"}))}Catch {exit 1}', 
     timeout   => 0,   
   } ~>
   
